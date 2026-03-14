@@ -1,19 +1,32 @@
 This repository contains pseudocode solutions for two fundamental programming problems: finding distinct elements across sets and calculating vector orthogonality using both procedures and functions.
-📝 Problem DescriptionsProblem 1: 
-Sum of Distinct ElementsGoal: Given two sets of integers, find the sum of all elements that are unique to either set (elements not present in both).
-Approach: Iterate through the first set and check if each element exists in the second set. If not, add it to the sum.
-Repeat the process for the second set, checking against the first.
-Data Structure used: Arrays.
-Logic used: Nested loops for comparison and a boolean flag (found) to track occurrences.
-Problem 2: Dot Product and OrthogonalityGoal: Determine if $n$ pairs of vectors are orthogonal. Two vectors are orthogonal if their dot product equals 0.
-Key Concepts:Dot Product: Calculated as +(V1_i * V2_i).
-Nested Loops: The main algorithm loops through n pairs (outer loop), while the dot product calculation loops through the vector elements (inner loop).
-Implementations:Procedure (dot_product): Uses Pass-by-Reference to update a variable (ps) directly.Function (dot_product_func): Uses a Return Value to pass the result back to the caller.
-Algorithms Explained1. Distinct Sum AlgorithmThe algorithm ensures that if an element exists in both arrays, it is ignored, effectively calculating the symmetric difference of the two sets.
-Dot Product (Procedure vs Function)Procedure Version: Ideal when you want the sub-program to modify a specific variable in the main memory.
-Function Version: More modular; it treats the dot product as a mathematical value that can be used directly inside an IF statement.
+
+A. Problem 1: 
+1. Given two sets of integers, find the sum of all elements that are unique to either set (elements not present in both).
+2. Approach: Iterate through the first set and check if each element exists in the second set. If not, add it to the sum.
+3. Repeat the process for the second set, checking against the first.
+4. Data Structure used: Arrays.
+5. Logic used: Nested loops for comparison and a boolean flag (found) to track occurrences.
+
+
+B. Problem 2: 
+1. Determine if $n$ pairs of vectors are orthogonal.
+2. Two vectors are orthogonal if their dot product equals 0.
+
+ 
+Algorithm Explained:
+The algorithm uses a bi-directional comparison strategy
+1. Compare each element of Set A against all elements of Set B. If it is not found, add it to the sum.
+2. Compare each element of Set B against all elements of Set A. If it is not found, add it to the sum.
+
+Dot Product & Orthogonality 
+We calculate the product of corresponding elements and accumulate them into a single value 
+It explores two ways to handle data passing:
+1. The procedure part (dot_product) uses Pass-by-Reference to update the ps variable directly in the main algorithm.
+2. The function part (dot_product_func) uses Return Value to pass the calculated result back to the caller.
+
+ 
  Checkpoint Criteria Met
- Use of Arrays
- Use of Nested Loops
- Clear Comments & Logic
- Comparison of Procedures and Functions
+ 1. Use of Arrays
+ 2. Use of Nested Loops
+ 3. Clear Comments & Logic
+ 4. Comparison of Procedures and Functions
