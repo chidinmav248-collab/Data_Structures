@@ -9,8 +9,9 @@ A. Problem 1:
 
 
 B. Problem 2: 
-1. Determine if $n$ pairs of vectors are orthogonal.
-2. Two vectors are orthogonal if their dot product equals 0.
+1. Write a procedure, called dot_product which calculates in the variable ps, the dot(scalar) product of v1 and v2 (v1 and v2 are vectors of IR)
+2. Determine if $n$ pairs of vectors are orthogonal.
+3. Two vectors are orthogonal if their dot product equals 0.
 
  
 Algorithm Explained:
@@ -18,8 +19,8 @@ The algorithm uses a bi-directional comparison strategy
 1. Compare each element of Set A against all elements of Set B. If it is not found, add it to the sum.
 2. Compare each element of Set B against all elements of Set A. If it is not found, add it to the sum.
 
-Dot Product & Orthogonality 
-We calculate the product of corresponding elements and accumulate them into a single value 
+Dot Product & Orthogonality: 
+Calculate the product of corresponding elements and accumulate them into a single value 
 It explores two ways to handle data passing:
 1. The procedure part (dot_product) uses Pass-by-Reference to update the ps variable directly in the main algorithm.
 2. The function part (dot_product_func) uses Return Value to pass the calculated result back to the caller.
