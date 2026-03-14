@@ -15,12 +15,11 @@ B. Problem 2:
 
  
 Algorithm Explained:
-The algorithm uses a bi-directional comparison strategy
+The Distinct_Element_Sum algorithm uses a bi-directional comparison strategy
 1. Compare each element of Set A against all elements of Set B. If it is not found, add it to the sum.
 2. Compare each element of Set B against all elements of Set A. If it is not found, add it to the sum.
 
-Dot Product & Orthogonality: 
-Calculate the product of corresponding elements and accumulate them into a single value 
+For the The Dot Product & Orthogonality algorithm, calculate the product of corresponding elements and accumulate them into a single value 
 It explores two ways to handle data passing:
 1. The procedure part (dot_product) uses Pass-by-Reference to update the ps variable directly in the main algorithm.
 2. The function part (dot_product_func) uses Return Value to pass the calculated result back to the caller.
