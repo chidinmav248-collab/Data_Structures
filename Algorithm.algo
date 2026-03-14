@@ -1,0 +1,101 @@
+Algorithm: Distinct_Element_Sum
+Variables:
+    set1, set2 : ARRAY OF INTEGER
+    sum : INTEGER := 0
+    i, j : INTEGER
+    found : BOOLEAN
+
+Begin
+    // Compare Set 1 to Set 2
+    FOR i FROM 0 TO set1.length - 1 DO
+        found := FALSE
+        FOR j FROM 0 TO set2.length - 1 DO
+            IF (set1[i] = set2[j]) THEN
+                found := TRUE
+                BREAK
+            END_IF
+        END_FOR
+        IF (NOT found) THEN
+            sum := sum + set1[i]
+        END_IF
+    END_FOR
+
+    // Compare Set 2 to Set 1
+    FOR i FROM 0 TO set2.length - 1 DO
+        found := FALSE
+        FOR j FROM 0 TO set1.length - 1 DO
+            IF (set2[i] = set1[j]) THEN
+                found := TRUE
+                BREAK
+            END_IF
+        END_FOR
+        IF (NOT found) THEN
+            sum := sum + set2[i]
+        END_IF
+    END_FOR
+
+    Write("The sum of distinct elements is: ", sum)
+End
+
+
+// Procedure to calculate dot product
+PROCEDURE dot_product(v1, v2 : ARRAY OF FLOAT, VAR ps : FLOAT)
+VAR
+    i : INTEGER
+BEGIN
+    ps := 0
+    FOR i FROM 0 TO v1.length - 1 DO
+        ps := ps + (v1[i] * v2[i])
+    END_FOR
+END
+
+// Main Algorithm
+ALGORITHM Orthogonal_Check
+VAR
+    v1, v2 : ARRAY OF FLOAT
+    ps : FLOAT
+    n, i : INTEGER
+BEGIN
+    Read(n) // Number of pairs to check
+    FOR i FROM 1 TO n DO
+        Read(v1, v2)
+        dot_product(v1, v2, ps) // ps is updated by the procedure
+        
+        IF (ps = 0) THEN
+            Write("Vectors are orthogonal")
+        ELSE
+            Write("Vectors are not orthogonal")
+        END_IF
+    END_FOR
+END
+
+// Function to calculate dot product
+FUNCTION dot_product_func(v1, v2 : ARRAY OF FLOAT) : FLOAT
+VAR
+    i : INTEGER
+    result : FLOAT := 0
+BEGIN
+    FOR i FROM 0 TO v1.length - 1 DO
+        result := result + (v1[i] * v2[i])
+    END_FOR
+    RETURN result
+END
+
+// Main Algorithm (Modified)
+ALGORITHM Orthogonal_Check_Function
+VAR
+    v1, v2 : ARRAY OF FLOAT
+    n, i : INTEGER
+BEGIN
+    Read(n)
+    FOR i FROM 1 TO n DO
+        Read(v1, v2)
+        // We call the function directly inside the IF condition
+        IF (dot_product_func(v1, v2) = 0) THEN
+            Write("Vectors are orthogonal")
+        ELSE
+            Write("Vectors are not orthogonal")
+        END_IF
+    END_FOR
+END
+
